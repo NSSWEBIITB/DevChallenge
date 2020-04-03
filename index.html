@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="main.css">
+  <title>Rumakita - Intern - Challenge - 2020</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <!-- jQuery -->
+  <script src="../../common/jquery.min.js"></script>
+</head>
+<body>
+  <!-- Item Start -->
+  <div class="list" id="list">
+  </div>
+</body>
+
+<script>
+  $(document).ready(function(){
+      $.getJSON("data.json",function(data){
+          var portfolio_data = '';
+          $.each(data, function(key,value){
+            portfolio_data+=
+            `
+    <div id="data-item">
+    <div class="partOne">
+      <img src="${value.logo}" alt="logo">
+    </div>
+    <div class="partTwo">
+      <div class="rowOne">
+        <div class="company">Photosnap</div>`
+        if (value.new == true) {
+          portfolio_data+=`<div class="new">NEW!</div>`;
+        }
+        if (value.featured == true) {
+          portfolio_data+=`<div class="featured">FEATURED</div>`;
+        }
+        portfolio_data+=`</div>
+      <div class="rowTwo">
+        ${value.position}
+      </div>
+      <div class="rowThree">
+        <div class="day">${value.postedAt}</div>&middot;
+        <div class="time">${value.contract}</div>&middot;
+        <div class="location">${value.location}</div>
+      </div>
+    </div>
+    <div class="partThree">
+      <li>${value.role}</li>
+      <li>${value.level}</li>`
+      for (x in value.languages) {
+        portfolio_data+=`<li>`+value.languages[x]+`</li>`;
+      }
+      portfolio_data+=`</div>
+    </div>`
+    ;});
+          $('#list').append(portfolio_data);
+      });
+  });
+</script>
+</html>
