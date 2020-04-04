@@ -18,6 +18,11 @@ body{
     border-radius: 5px;
     box-shadow: rgba(0,0,0,0.5) 0px 0px 18px;  
 }
+#data-item:hover{
+    border-left-color: rgb(56, 148, 148);
+    border-left-width: 5px;
+    border-left-style: solid;
+}
 .partOne>img{
     /* width: 100%; */
     height: auto;
@@ -37,7 +42,13 @@ body{
     font-size: 0.8rem;
     background-color: rgb(222, 236, 236);
 }
+.partThree>li:hover{
+    cursor: pointer;
+    background-color: rgb(56, 148, 148);
+    color: rgb(222, 236, 236);
+}
 .rowTwo{
+    cursor: pointer;
     font-size: 1.2rem;
     font-weight: 1000;
     opacity: 0.9;
@@ -48,9 +59,14 @@ body{
 .rowThree{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     font-size: 15px;
     font-weight: 500;
+}
+.day{
+    padding: 0px 6px 0px 0px;
+}
+.time,.location{
+    padding: 0px 6px 0px 6px;
 }
 .new,.featured{
     color: white;
