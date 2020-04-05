@@ -9,8 +9,42 @@ body{
     flex-direction: column;
 }
 .filterSection{
+    text-align: center;
     display: flex;
     flex-direction: column;
+}
+.filterSection>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(70% + 40px);
+    margin: 1rem 0rem 0rem 15%;
+}
+.filterSection>div>div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.filterSection>div>div>span{
+    text-align: center;
+    font-size: 1.2rem;
+    background: rgb(56, 148, 148);
+    color: white;
+    border-radius: 5px 5px 0px 0px;
+    padding: 10px 0px 10px 0px;
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 18px;
+}
+.filterSection>div>div:first-child>span,#filter1{
+    width: 95%;
+    margin-right: 5%;
+}
+.filterSection>div>div:last-child>span,#filter3{
+    width: 95%;
+    margin-left: 5%;
+}
+.filterSection>div>div:nth-child(2)>span,#filter2{
+    width: 90%;
+    margin: 0% 5% 0% 5%;
 }
 .filterSection>span{
     text-align: center;
@@ -23,10 +57,8 @@ body{
     padding: 10px 0px 10px 0px;
     box-shadow: rgba(0,0,0,0.5) 0px 0px 18px;
 }
-#filter{
-    width: calc(70% + 40px);
-    margin: 0 0 0 15%;
-    padding: 20px 40px 20px 40px ;
+#filter1,#filter2,#filter3{
+    padding: 5px 0px 5px 10px ;
     border-radius: 0px 0px 5px 5px;
     box-shadow: rgba(0,0,0,0.5) 0px 0px 8px;
     font-size: 1.2rem;
@@ -38,7 +70,7 @@ body{
     color: hsl(180, 14%, 20%);
     font-weight: 1000;
 }
-#filter>option:active{
+#filter1>option:hover,#filter2>option:hover,#filter3>option:hover{
     background-color: hsl(180, 14%, 20%);
     color: white;
 }
@@ -140,10 +172,31 @@ body{
     margin-inline-start: auto;
 }
 @media screen and (max-width: 480px){
+    .filterSection>div{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-left: 5% !important;
+    }
+    .filterSection>div>div{
+        margin-bottom: 1rem;
+    }
+    .filterSection>div>div:first-child>span,#filter1,
+    .filterSection>div>div:last-child>span,#filter3,
+    .filterSection>div>div:nth-child(2)>span,#filter2{
+        width: 100%;
+        margin: 0% 0% 0% 0%;
+    }
+    .filterSection>div>div>span{
+        font-size: 0.7rem;
+    }
     .filterSection>span{
         width: 90%;
         margin: 1rem 0 0 5%;
-        font-size: 1rem;
+        font-size: 0.8rem;
+    }
+    #filter1,#filter2,#filter3{
+        font-size: 0.65rem;
     }
     #filter{
         width: 90%;
