@@ -17,6 +17,28 @@
   <script src="jquery-min.js"></script>
 </head>
 <body>
+  
+<!-- partial:index.partial.html -->
+<div class="filterSection">
+  <span>Filter Card</span>
+  <select id="filter">
+    <option>All</option>
+    <option>Frontend</option>
+    <option>Fullstack</option>
+    <option>Backend</option>
+    <option>HTML</option>
+    <option>CSS</option>
+    <option>JavaScript</option>
+    <option>Backend</option>
+    <option>Python</option>
+    <option>Vue</option>
+    <option>Sass</option>
+    <option>Django</option>
+    <option>React</option>
+    <option>RoR</option>
+    <option>Ruby</option>
+</select>
+</div>
   <!-- Item Start -->
   <div class="list" id="list">
   </div>
@@ -29,7 +51,8 @@
           $.each(data, function(key,value){
             portfolio_data+=
             `
-    <div id="data-item">
+    <div id="data-item" class="data-list">
+      <span class="span">${value.id}</span>
     <div class="partOne">
       <img src="${value.logo}" alt="logo">
     </div>
@@ -58,6 +81,9 @@
       for (x in value.languages) {
         portfolio_data+=`<li>`+value.languages[x]+`</li>`;
       }
+      for (i in value.tools) {
+        portfolio_data+=`<li>`+value.tools[i]+`</li>`;
+      }
       portfolio_data+=`</div>
     </div>`
     ;});
@@ -65,4 +91,7 @@
       });
   });
 </script>
+
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="filter.js"></script>
 </html>

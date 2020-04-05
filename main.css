@@ -8,6 +8,40 @@ body{
     display: flex;
     flex-direction: column;
 }
+.filterSection{
+    display: flex;
+    flex-direction: column;
+}
+.filterSection>span{
+    text-align: center;
+    font-size: 1.2rem;
+    background: rgb(56, 148, 148);
+    color: white;
+    width: calc(70% + 40px);
+    margin-left: 15%;
+    border-radius: 5px 5px 0px 0px;
+    padding: 10px 0px 10px 0px;
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 18px;
+}
+#filter{
+    width: calc(70% + 40px);
+    margin: 0 0 0 15%;
+    padding: 20px 40px 20px 40px ;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 8px;
+    font-size: 1.2rem;
+    color: hsl(180, 14%, 20%);
+    font-weight: 1000;
+}
+#filter>option{
+    font-size: 1.2rem;
+    color: hsl(180, 14%, 20%);
+    font-weight: 1000;
+}
+#filter>option:active{
+    background-color: hsl(180, 14%, 20%);
+    color: white;
+}
 #data-item{
     width: 70%;
     margin: 2rem 15% 2rem 15%;
@@ -16,12 +50,15 @@ body{
     flex-direction: row;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: rgba(0,0,0,0.5) 0px 0px 18px;  
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 18px;
 }
 #data-item:hover{
     border-left-color: rgb(56, 148, 148);
     border-left-width: 5px;
     border-left-style: solid;
+}
+#data-item>span{
+    display: none;
 }
 .partOne>img{
     /* width: 100%; */
@@ -103,6 +140,21 @@ body{
     margin-inline-start: auto;
 }
 @media screen and (max-width: 480px){
+    .filterSection>span{
+        width: 90%;
+        margin: 1rem 0 0 5%;
+        font-size: 1rem;
+    }
+    #filter{
+        width: 90%;
+        margin: 0rem 0% 0 5%;
+        font-size: 1rem;
+    }
+    #filter>option{
+        font-size: 1rem;
+        color: gray;
+        font-weight: 1000;
+    }
     #data-item{
         width: auto;
         flex-direction: column;
