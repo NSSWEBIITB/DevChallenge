@@ -37,7 +37,7 @@ sels = document.getElementsByTagName('select');
          $.getJSON("data.json",function(data){
             $.each(data, function(key,value){
                 if( value.id === cur_items[i].innerText){
-                    for(var j = 0; j < (languages.length+2); j++)
+                    for(var j = 0; j < languages.length; j++)
                     {
                         for (x in value.languages) {
                             if (selected == "All" || value.languages[x] == selected) {
@@ -63,7 +63,7 @@ sels = document.getElementsByTagName('select');
          $.getJSON("data.json",function(data){
             $.each(data, function(key,value){
                 if( value.id === cur_items[i].innerText){
-                    for(var j = 0; j < (tools.length); j++)
+                    for(var j = 0; j < tools.length; j++)
                     {
                         for (x in value.tools) {
                             if (selected == "All" || value.tools[x] == selected) {
